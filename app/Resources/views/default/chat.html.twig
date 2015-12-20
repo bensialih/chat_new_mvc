@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {{ include('default/iframe/iframe.html.twig') }}
+    {{ include('default/forms/pitcher.html.twig') }}
+
+{% endblock %}
+
+{% block stylesheets %}
+<script>
+
+function reloadIFrame() {
+document.getElementById("chat_displayer").contentWindow.location.reload(true);
+}
+
+setInterval("reloadIFrame();", {{counterInterver}} );
+</script>
+{% endblock %}

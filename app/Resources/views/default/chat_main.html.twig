@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <iframe src="/iframeRead" width="600" height="150" id="chat_displayer" >
+        </iframe>
+
+        
+<form action="/formCatcher"  method="POST" >
+        <input type="text" name="username" value="Hakim Bensiali" /><br/>
+    <textarea name="message" >
+    </textarea>
+    <br/>
+    <input type="submit" value="Send to chat" />
+    </form>
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+            function reloadIFrame() 
+            {
+            //  console.log("welcome");
+            document.getElementById("chat_displayer").contentWindow.location.reload(true);
+            }
+
+            setInterval("reloadIFrame();", 1000);
+        </script>
+{% endblock %}

@@ -1,0 +1,7 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% for token in rows %}
+        <p>{{token[0]}} _ {{token[1]}} _ {{token[2]}}</p>
+    {% endfor %}
+{% endblock %}
