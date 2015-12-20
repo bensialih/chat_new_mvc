@@ -7,7 +7,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-//require 'new_chat\Test.php';
 use new_chat\Test;
 use new_chat\model\Model;
 
@@ -21,13 +20,10 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
-        // replace this example code with whatever you need
-
         $test = new Test();
         $model = new Model();
 
         $child_array = array("username"=>"Hakim Bensiali", "message"=>"Hello", "time"=>"13/07/2015");
-        //$model->writeToFile($child_array);
 
         return $this->render(
             'default/chat.html.twig', 
@@ -37,8 +33,6 @@ class DefaultController extends Controller
              'timerIntervals' => 2000 
              )
             );
-
-        //return new Response("hello world " . $test->returnMe());
     }
 
     /**
